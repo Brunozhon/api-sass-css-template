@@ -1,0 +1,45 @@
+// Define mixins
+@mixin button($bg-color: white, $color: black, $padding: 0px, $magrin: 16px, $border: 0px) {
+  border: $border;
+  background-color: $bg-color;
+  color: $color;
+  padding: $padding;
+  magrin: $magrin;
+}
+@mixin font($size: 16px, $type: Arial, $m-type: Helvetica, $mi-type: sans-serif, $weight: normal) {
+  font: {
+    size: $size;
+    family: $type, $m-type, $mi-type;
+    weight: $weight;
+  }
+}
+// Make styles
+.sucess-button {
+  @include button($bg-color: #00FF00);
+}
+.warning-button {
+  @include button($bg-color: #FFFF00);
+}
+.danger-button {
+  @include button($bg-color: #FF0000);
+}
+button,
+input.button,
+a.button,
+.button-style {
+  @include button($bg-color: #808080, $border: 1px solid black)
+}
+p,
+div,
+span,
+article,
+section,
+header,
+footer,
+blockquote,
+default-font{
+  font: {
+    family: Helvetica, sans-serif;
+    size: 16px;
+  }
+}
